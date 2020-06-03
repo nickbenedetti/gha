@@ -1,9 +1,10 @@
-name: Run Swift Tests
+name: Learn about GHActions
 
 on: [push]
 
 jobs:
   myjob:
+    runs-on: ubuntu-latest
     container:
       image: node:10.16-jessie
     steps:
