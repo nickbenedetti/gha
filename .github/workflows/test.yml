@@ -15,3 +15,5 @@ jobs:
         bash --version
         cat /etc/os-release
         uname --kernel-name --kernel-release --machine
+        shopt -s nullglob
+        ls /
