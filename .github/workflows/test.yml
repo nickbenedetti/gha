@@ -1,0 +1,8 @@
+name: Run Swift Tests
+
+on: [push]
+
+jobs:
+  myjob:
+    container:
+      image: node:10.16-jessie
