@@ -6,3 +6,11 @@ jobs:
   myjob:
     container:
       image: node:10.16-jessie
+    steps:
+    - uses: actions/checkout@v2
+    - name: test things!
+      run: | 
+        set -x
+        bash --version
+        cat /etc/os-release
+        uname --kernel-name --kernel-release --machine
