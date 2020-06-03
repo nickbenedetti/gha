@@ -6,7 +6,7 @@ jobs:
   myjob:
     runs-on: ubuntu-latest
     container:
-      image: node:10.16-jessie
+      image: swift:5.2-xenial
     steps:
     - uses: actions/checkout@v2
     - name: test things!
