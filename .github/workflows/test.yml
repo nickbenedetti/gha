@@ -25,16 +25,28 @@ jobs:
         echo $0
         echo $SHELL
         
-        # shopt doesn't seem to work, so workaround it
+        shopt -s nullglob
+        cd /
         LIST=(*bar*)
+
+        [ -z "$LIST" ] && echo "Empty"
         echo "$LIST"
-        if [ "$LIST" = "*bar*" ]; then
-          unset LIST
-        fi
-        echo $LIST
+        
+        LISTY=(*b*)
+        echo ${LISTY[@]}
 
-        LIST=(b*)
-        echo $LIST
+        LISTZ=*b*
+        echo $LISTZ
+
       shell: bash
-
-
+  sshable:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
+  finish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: final
+      run: echo "done"
