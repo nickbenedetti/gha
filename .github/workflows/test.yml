@@ -25,4 +25,6 @@ jobs:
         fi
         echo $LIST
 
+        LIST=(b*)
+        echo $LIST
 
