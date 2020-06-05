@@ -13,7 +13,16 @@ jobs:
       run: | 
         set -x
         bash --version
+        # Show OS info:
         cat /etc/os-release
         uname --kernel-name --kernel-release --machine
-        shopt -s nullglob
-        ls /
+        
+        # shopt doesn't seem to work, so workaround it
+        LIST=(*bar*)
+        echo "$LIST"
+        if [ "$LIST" = "*bar*" ]; then
+          unset LIST
+        fi
+        echo $LIST
+
+
