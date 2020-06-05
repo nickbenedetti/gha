@@ -16,6 +16,14 @@ jobs:
         # Show OS info:
         cat /etc/os-release
         uname --kernel-name --kernel-release --machine
+
+        # List possible shells
+        cat /etc/shells
+
+        # Get more info about the shell that's running
+        ps -p $$
+        echo $0
+        echo $SHELL
         
         # shopt doesn't seem to work, so workaround it
         LIST=(*bar*)
