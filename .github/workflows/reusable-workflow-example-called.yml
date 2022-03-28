@@ -1,0 +1,14 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow:
+    # uses: ./.github/workflows/reusable-workflow-example-caller.yml
+    runs-on: ubuntu-latest
+    steps:
+      - id: do-a-thing
+        run: echo "ran!"
