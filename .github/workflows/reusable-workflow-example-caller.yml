@@ -1,14 +1,11 @@
-name: Call a reusable workflow
+name: Caller for a reusable workflow
 on:
   push:
     branches:
       - main
 jobs:
   example_job:
-    name: Pass input and secrets to my-action
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/reusable-workflow-example-called
-        # with:
-        #   username: ${{ inputs.username }}
-        #   token: ${{ secrets.token }}
+    uses: ./.github/workflows/reusable-workflow-example-called.yml
+#         # with:
+#         #   username: ${{ inputs.username }}
+#         #   token: ${{ secrets.token }}
