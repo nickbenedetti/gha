@@ -4,12 +4,12 @@ name: Called reusable workflow
 on:
   workflow_call:
     inputs:
-      username:
+      BUILD_ENV:
         required: true
         type: string
-    # secrets:
-    #   token:
-    #     required: true
+    secrets:
+      TESTING:
+        required: true
 
 jobs:
   called-workflow:
@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: do-a-thing
-        run: echo "${username}!"
+        run: echo "${BUILD_ENV} is ${TESTING}!"

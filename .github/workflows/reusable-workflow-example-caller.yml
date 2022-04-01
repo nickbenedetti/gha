@@ -7,5 +7,6 @@ jobs:
   example_job:
     uses: ./.github/workflows/reusable-workflow-example-called.yml
     with:
-      username: ${{ "JOE" }}
-
+      BUILD_ENV: Dev
+    secrets:
+      TESTING: ${{ secrets.TESTING }}
