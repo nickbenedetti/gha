@@ -3,18 +3,18 @@ name: Called reusable workflow
 
 on:
   workflow_call:
-    # inputs:
-    #   username:
-    #     required: true
-    #     type: string
+    inputs:
+      username:
+        required: true
+        type: string
     # secrets:
     #   token:
     #     required: true
 
 jobs:
   called-workflow:
-    # uses: ./.github/workflows/reusable-workflow-example-caller.yml
+    name: Blippedy
     runs-on: ubuntu-latest
     steps:
       - id: do-a-thing
-        run: echo "ran!"
+        run: echo "${username}!"
