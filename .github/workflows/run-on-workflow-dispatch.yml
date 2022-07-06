@@ -4,6 +4,7 @@ name: workflow dispatch
 
 on:
   workflow_dispatch:
+  push: 
 
 jobs:
   workflow-dispatch-basic:
