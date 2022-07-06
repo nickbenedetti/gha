@@ -1,0 +1,24 @@
+# See https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow for details
+# Created July 6, 2022
+name: workflow dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      debug_enabled:
+        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'     
+        required: false
+        default: false
+        type: boolean
+        
+jobs:
+  workflow-dispatch-basic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
+        # with:
+        #   limit-access-to-actor: true
+      - name: Echo text
+        run: echo "workflow_dispatch worked."
