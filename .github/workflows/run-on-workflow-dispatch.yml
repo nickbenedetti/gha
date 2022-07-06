@@ -1,0 +1,13 @@
+# See https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow for details
+# Created July 6, 2022
+name: workflow dispatch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  workflow-dispatch-basic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo text
+        run: echo "workflow_dispatch worked."
