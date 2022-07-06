@@ -3,8 +3,8 @@ name: Run On Tag
 on:
   push:
     tags:
-      - run-on-tag
-      - v1.0.1
+      # - run-on-tag
+      - v1.0.*
 jobs:
   run-on-tag:
     timeout-minutes: 5
