@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - run-on-tag
+      - v1.0.1
 
 jobs:
   run-on-tag:
