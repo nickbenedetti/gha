@@ -1,6 +1,6 @@
 # See https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow for details
 # Created July 6, 2022
-name: workflow dispatch
+name: workflow dispatch for ssh
 
 on:
   workflow_dispatch:
@@ -10,9 +10,9 @@ on:
         required: false
         default: false
         type: boolean
-        
+
 jobs:
-  workflow-dispatch-basic:
+  workflow-dispatch-ssh:
     runs-on: ubuntu-latest
     steps:
       - name: Setup tmate session
