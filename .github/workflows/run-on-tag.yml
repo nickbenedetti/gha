@@ -5,7 +5,6 @@ on:
     tags:
       - run-on-tag
       - v1.0.1
-
 jobs:
   run-on-tag:
     timeout-minutes: 5
@@ -17,3 +16,4 @@ jobs:
       - name: echo-working
         run: |
           echo "Working!"
+          echo Semantics for v control not needed
